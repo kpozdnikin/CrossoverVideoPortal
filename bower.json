@@ -1,0 +1,30 @@
+{
+  "name": "Crossover Video Portal",
+  "version": "1.0",
+  "homepage": "https://github.com/kpozdnikin/CrossoverVideoPortal",
+  "authors": [
+    "kpozdnikin <kpozdnikin@gmail.com>"
+  ],
+  "description": "crossover application project video portal",
+  "main": "bower.json",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "crossover, video"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "*",
+    "angular-animate": "*",
+    "angular-cookies": "*",
+    "angular-ui-router": "*",
+    "angular-material":"*",
+    "angular-ui-mask":"*"
+  }
+}
