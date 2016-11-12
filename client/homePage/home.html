@@ -1,0 +1,11 @@
+<div layout="row">
+    <section layout-fill layout="column">
+
+        <div ng-repeat="row in grid" flex layout="row">
+            <div ng-repeat="item in row" flex layout="row" layout-align="center center" layout-margin class="box">
+                <h1 class="md-title">{{ item }}</h1>
+            </div>
+        </div>
+
+    </section>
+</div>

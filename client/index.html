@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!--STYLES-->
+	<link rel="stylesheet" type="text/css" href="/bower_components/angular-material/angular-material.css"/>
+	<link rel="stylesheet" type="text/css" href="/client/css/style.css"/>
+	<!--STYLES END-->
+
+	<!--SCRIPTS-->
+	<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-animate/angular-animate.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-aria/angular-aria.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-cookies/angular-cookies.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-material/angular-material.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-messages/angular-messages.js"></script>
+	<!--SCRIPTS END-->
+
 	<title>Crossover Video Portal</title>
 </head>
-<body>
-	<h2>Crossover Video Portal</h2>
-	<hr />
-	If you see this page, it means you have configured the app correctly. Put your client side code in /client folder and the application will start serving your code.
+<body ng-app="videoPortal" ng-cloak layout="column">
+
+<md-toolbar>
+	toolbar
+</md-toolbar>
+
+<data-ui-view></data-ui-view>
+
 </body>
 </html>

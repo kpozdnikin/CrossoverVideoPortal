@@ -1,5 +1,5 @@
 {
-  "name": "test",
+  "name": "video_portal_api_master",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,6 +14,16 @@
     "express": "^4.13.4",
     "mongoose": "^4.4.20",
     "morgan": "^1.7.0",
-    "q": "^1.4.1"
+    "q": "^1.4.1",
+    "gulp":"*",
+    "gulp-debug":"*",
+    "gulp-minify-css":"*",
+    "gulp-uglify":"*",
+    "gulp-concat":"*",
+    "gulp-linker":"*",
+    "gulp-ruby-sass":"*",
+    "merge-stream":"*",
+    "gulp-rename":"*",
+    "gulp-css-rebase-urls":"*"
   }
 }
