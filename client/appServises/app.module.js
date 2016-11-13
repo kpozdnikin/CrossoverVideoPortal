@@ -6,6 +6,7 @@
         'ngAnimate',
         'ngCookies',
         'ngMaterial',
+        'angular-md5',
         'videoPortal.home',
         'videoPortal.item'
     ]);

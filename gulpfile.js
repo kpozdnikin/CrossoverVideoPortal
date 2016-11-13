@@ -11,24 +11,25 @@ var minifyCss = require('gulp-minify-css'), // minify CSS;
 
 var scriptsFilesList = [
     //packages
-    'bower_components/angular/angular.js',
-    'bower_components/angular-ui-router/release/angular-ui-router.js',
-    'bower_components/angular-animate/angular-animate.js',
-    'bower_components/angular-aria/angular-aria.js',
-    'bower_components/angular-cookies/angular-cookies.js',
-    'bower_components/angular-material/angular-material.js',
-    'bower_components/angular-material/angular-material.js',
-    'bower_components/angular-messages/angular-messages.js',
-    'bower_components/angular-ui-router/release/angular-ui-router.js',
+    'client/bower_components/angular/angular.js',
+    'client/bower_components/angular-ui-router/release/angular-ui-router.js',
+    'client/bower_components/angular-animate/angular-animate.js',
+    'client/bower_components/angular-aria/angular-aria.js',
+    'client/bower_components/angular-cookies/angular-cookies.js',
+    'client/bower_components/angular-material/angular-material.js',
+    'client/bower_components/angular-material/angular-material.js',
+    'client/bower_components/angular-messages/angular-messages.js',
+    'client/bower_components/angular-ui-router/release/angular-ui-router.js',
+    'client/bower_components/angular-md5/angular-md5.js',
     //project files
-    'client/*.module.js',
-    'client/*.controller.js',
-    'client/*.service.js',
-    'client/*.route.js',
-    'client/*.filter.js'
+    'client/*/*.module.js',
+    'client/*/*.controller.js',
+    'client/*/*.service.js',
+    'client/*/*.route.js',
+    'client/*/*.filter.js'
 ];
 var ccsFilesList = [
-    'bower_components/angular-material/angular-material.css',
+    'client/bower_components/angular-material/angular-material.css',
     'client/css/style.css'
 ];
 
@@ -70,16 +71,16 @@ function createTplForDevelopment() {
                 scripts: scriptsFilesList,
                 startTag: '<!--SCRIPTS-->',
                 endTag: '<!--SCRIPTS END-->',
-                fileTmpl: '<script type="text/javascript" src="/\%s"></script>',
-                appRoot: ''
+                fileTmpl: '<script type="text/javascript" src="\%s"></script>',
+                appRoot: 'client'
             }))
         // Link the CSS
         .pipe(linker({
             scripts: ccsFilesList,
             startTag: '<!--STYLES-->',
             endTag: '<!--STYLES END-->',
-            fileTmpl: '<link rel="stylesheet" type="text/css" href="/\%s"/>',
-            appRoot: ''
+            fileTmpl: '<link rel="stylesheet" type="text/css" href="\%s"/>',
+            appRoot: 'client'
         }))
         // Write modified files to client
         .pipe(gulp.dest('client'))

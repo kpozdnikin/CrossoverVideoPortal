@@ -1,0 +1,60 @@
+<md-content layout-padding>
+    <div layout="column" flex>
+        <div flex="40" flex-offset="30">
+            <h1 class="md-title">Do you want to see our private videos?</h1>
+        </div>
+        <div flex>
+            <div layout-gt-sm="row">
+
+                <div flex="30" hide-xs hide-sm>
+                    <!-- Spacer //-->
+                </div>
+
+                <form flex name="userForm">
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Name</label>
+                            <input required name="name"
+                                   ng-model="user.name" />
+                            <div class="hint"
+                                 ng-show="showHints">Username or password is incorrect!</div>
+                            <div ng-messages="userForm.name.$error">
+                                <div ng-message="required">Name is required.</div>
+                            </div>
+                        </md-input-container>
+
+                    <div layout-gt-sm="row">
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Password</label>
+                            <input type="password" name="password"
+                                   ng-model="user.password"
+                                   required minlength="8" maxlength="100" />
+                            <div class="hint" ng-show="showHints">Username or password is incorrect!</div>
+                            <div ng-messages="userForm.password.$error" ng-hide="!showHints">
+                                <div ng-message-exp="['required', 'minlength', 'maxlength']">
+                                    Your password must be 8 or more characters long.
+                                </div>
+                            </div>
+                        </md-input-container>
+
+                    </div>
+                    <div class="form-actions">
+                        <md-button ng-disabled="!user.name || !user.password"
+                                   ng-click="vm.getCredentials()"
+                                   class="md-raised md-primary">Login
+                        </md-button>
+                        <md-button class="md-raised md-warn">No, I dont</md-button>
+                    </div>
+
+                </form>
+
+                <div flex="30" hide-xs hide-sm>
+                    <!-- Spacer //-->
+                </div>
+
+            </div>
+    </div>
+</md-content>
+
+</div>

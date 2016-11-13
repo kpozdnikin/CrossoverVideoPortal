@@ -3,7 +3,7 @@
 <head>
 	<!--STYLES-->
 	<link rel="stylesheet" type="text/css" href="/bower_components/angular-material/angular-material.css"/>
-	<link rel="stylesheet" type="text/css" href="/client/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/style.css"/>
 	<!--STYLES END-->
 
 	<!--SCRIPTS-->
@@ -14,17 +14,29 @@
 	<script type="text/javascript" src="/bower_components/angular-cookies/angular-cookies.js"></script>
 	<script type="text/javascript" src="/bower_components/angular-material/angular-material.js"></script>
 	<script type="text/javascript" src="/bower_components/angular-messages/angular-messages.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-md5/angular-md5.js"></script>
+	<script type="text/javascript" src="/appServises/app.module.js"></script>
+	<script type="text/javascript" src="/homePage/home.module.js"></script>
+	<script type="text/javascript" src="/itemPage/item.module.js"></script>
+	<script type="text/javascript" src="/appServises/app.controller.js"></script>
+	<script type="text/javascript" src="/homePage/home.controller.js"></script>
+	<script type="text/javascript" src="/itemPage/item.controller.js"></script>
+	<script type="text/javascript" src="/loginPage/login.controller.js"></script>
+	<script type="text/javascript" src="/appServises/app.service.js"></script>
+	<script type="text/javascript" src="/appServises/config.route.js"></script>
 	<!--SCRIPTS END-->
 
 	<title>Crossover Video Portal</title>
 </head>
-<body ng-app="videoPortal" ng-cloak layout="column">
+<body ng-app="videoPortal" ng-controller="AppController" ng-cloak layout="column">
 
 <md-toolbar>
-	toolbar
+	<div class="md-toolbar-tools">
+		<h2 class="md-flex">Private videos*** com. The best private videos you've ever seen!</h2>
+	</div>
 </md-toolbar>
 
-<data-ui-view></data-ui-view>
+<ui-view></ui-view>
 
 </body>
 </html>

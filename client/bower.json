@@ -24,6 +24,7 @@
     "angular-animate": "*",
     "angular-cookies": "*",
     "angular-ui-router": "*",
-    "angular-material":"*"
+    "angular-material": "*",
+    "angular-md5": "^0.1.10"
   }
 }

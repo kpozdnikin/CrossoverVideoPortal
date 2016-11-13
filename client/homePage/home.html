@@ -1,11 +1,18 @@
 <div layout="row">
     <section layout-fill layout="column">
-
-        <div ng-repeat="row in grid" flex layout="row">
-            <div ng-repeat="item in row" flex layout="row" layout-align="center center" layout-margin class="box">
-                <h1 class="md-title">{{ item }}</h1>
+        home
+        <md-virtual-repeat-container id="vertical-container">
+            <div md-virtual-repeat="row in grid" flex layout="row">
+                <div ng-repeat="item in row" flex layout="row"
+                     layout-align="center center"
+                     layout-margin class="box">
+                    {{ item }}
+                    <video width="320" height="240" autoplay>
+                        <source src="movie.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
-        </div>
-
+        </md-virtual-repeat-container>
     </section>
 </div>
