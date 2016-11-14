@@ -23,11 +23,12 @@
         activate();
 
         function activate(){
-
+            $scope.userData.sessionId = $cookies.get('sessionId');
         }
 
         function logout(){
             videoPortalService.destroySession();
+            $scope.userData.sessionId = null;
         }
 
     }

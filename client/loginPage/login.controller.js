@@ -14,12 +14,14 @@
         //functions
         vm.activate = activate;
         vm.getCredentials = getCredentials;
+        vm.why = why;
 
         //variables
-        vm.user = {
+        $scope.user = {
             name:'',
             password:''
         };
+        $scope.why = false;
         $scope.showHints = false;
 
 
@@ -33,6 +35,7 @@
         function getCredentials(){
             videoPortalService.getCredentials($scope.user).then(function(resp){
                 if(resp){
+                    $scope.userData.sessionId = $cookies.get('sessionId');
                     $state.go('home');
                 }
                 else{
@@ -41,6 +44,10 @@
             }, function(err){
 
             });
+        }
+
+        function why(){
+            $scope.why = true;
         }
     }
 })();

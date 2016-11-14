@@ -1,5 +1,5 @@
 <md-content layout-padding>
-    <div layout="column" flex>
+    <div layout="column" flex ng-if="!why">
         <div flex="40" flex-offset="30">
             <h1 class="md-title">Do you want to see our private videos? Please login!</h1>
         </div>
@@ -44,7 +44,7 @@
                                    ng-click="vm.getCredentials()"
                                    class="md-raised md-primary">Login
                         </md-button>
-                        <md-button class="md-raised md-warn">No, I dont</md-button>
+                        <md-button ng-click="vm.why()" class="md-raised md-warn">No, I dont</md-button>
                     </div>
 
                 </form>
@@ -54,6 +54,10 @@
                 </div>
 
             </div>
+        </div>
+    </div>
+    <div ng-if="why" flex="40" flex-offset="30">
+        <img src="img/why.png" alt="why???">
     </div>
 </md-content>
 
