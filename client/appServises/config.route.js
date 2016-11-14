@@ -6,12 +6,14 @@ angular
 
 function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 
+    //to set up another theme
     /*$mdThemingProvider
         .theme('default')
         .primaryPalette('lime');*/
 
     $urlRouterProvider.when('', '/').when('/home', '/home/all').when('/', '/home/all');
 
+    //root route
     $stateProvider.state('main', {
         url: '',
         controllerAs: 'vm',
@@ -51,18 +53,20 @@ function config($stateProvider, $urlRouterProvider, $mdThemingProvider) {
         controllerAs: 'vm',
         templateUrl: '/itemPage/item.html',
         resolve: {
-            videos  : resolveVideos,
-            video   : resolveVideo
+            videos  : resolveVideos, //all videos
+            video   : resolveVideo //selected video
         },
         title: 'videoPortal/video'
     });
 
+    //getting videos from backend
     resolveVideos.$inject = ['$cookies', 'videoPortalService'];
     function resolveVideos($cookies, videoPortalService) {
         return videoPortalService.getVideos($cookies.get('sessionId'), 10, 0).then(function (resp) {
             return resp.data || null;
         });
     }
+    //getting one video from backend by id
     resolveVideo.$inject = ['$cookies', '$stateParams', 'videoPortalService'];
     function resolveVideo($cookies, $stateParams, videoPortalService) {
         return videoPortalService.getVideo($cookies.get('sessionId'), $stateParams.itemId).then(function (resp) {

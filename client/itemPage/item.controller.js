@@ -19,6 +19,7 @@
 
         activate();
 
+        //get selected video and other related videos
         function activate() {
             vm.videos = videoPortalService.checkAllVideosRating(vm.videos);
             vm.video = videoPortalService.checkAllVideosRating(vm.video);

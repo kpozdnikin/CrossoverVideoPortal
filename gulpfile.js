@@ -21,7 +21,6 @@ var scriptsFilesList = [
     'client/bower_components/angular-messages/angular-messages.js',
     'client/bower_components/angular-ui-router/release/angular-ui-router.js',
     'client/bower_components/angular-md5/angular-md5.js',
-    'client/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
     'client/bower_components/angular-jk-rating-stars/dist/jk-rating-stars.js',
     'client/bower_components/angular-loading-bar/build/loading-bar.js',
     //project files

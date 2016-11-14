@@ -22,6 +22,7 @@
 
         activate();
 
+        //if session destroyed - go login
         function activate() {
             if (!vm.sessionId) {
                 $state.go('login');
@@ -36,6 +37,7 @@
             item.rated = true;
         }
 
+        //lazy loading videos
         function showMore(){
             var videoLenght = vm.videos.length;
             videoPortalService.getVideos(vm.sessionId, 10, videoLenght).then(function (resp) {
@@ -43,13 +45,5 @@
                 vm.videos = vm.videos.concat(moreVideos);
             });
         }
-
-        /*var cart = document.querySelector('#cart-content');
-         cart.style.width = 50 + '%';
-         cart.style.margin = '0 auto';
-         cart.style.height = parseInt(document.documentElement.clientHeight) - 170 + 'px';
-         cart.style.overflow = 'scroll';
-         cart.style.overflowX = 'hidden';*/
-
     }
 })();
