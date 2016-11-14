@@ -26,16 +26,13 @@
         activate();
 
         function activate(){
-            console.log('LoginController');
-            console.log($cookies.get('sessionId'));
+            if($cookies.get('sessionId')) $state.go('home');
         }
 
         //authirize user if credentials are valid
         function getCredentials(){
             videoPortalService.getCredentials($scope.user).then(function(resp){
-                console.log(resp);
                 if(resp){
-                    $scope.showHints = false;
                     $state.go('home');
                 }
                 else{

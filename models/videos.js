@@ -61,7 +61,7 @@ videosModel.get = function(skip, limit){
 
 	return results.promise;
 	
-}
+};
 
 //function to get single video by its id.
 videosModel.getOne = function(id){

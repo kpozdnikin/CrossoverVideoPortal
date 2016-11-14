@@ -1,0 +1,27 @@
+<div id="vertical-container" scrolly="vm.showMore()">
+    <div class="col-md-3 panel"
+         data-ng-repeat-start="(ind, item) in vm.videos" id="{{ ind }}">
+        <div class="panel-heading">
+            <a href="javascript:void(0)"
+               class=""
+               data-ui-sref="home.item({ itemId: item._id })">
+                <h2>{{ item.name | filter:videoNameFilter }}</h2>
+            </a>
+        </div>
+        <div class="panel-body">
+            <video controls="controls" class="panel-video">
+                <source data-ng-if="item.url" src="{{ item.url }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="panel-footer">
+            {{ item.description }}
+        </div>
+        <div class="panel-controls">
+            <jk-rating-stars max-rating="5" rating="item.rating" read-only="item.rated" on-rating="vm.onRating(item)" >
+            </jk-rating-stars>
+        </div>
+    </div>
+    <div class="col-md-12" data-ng-if="((ind + 1) % 4) == 0 && ind > 0"></div>
+    <div data-ng-repeat-end></div>
+</div>

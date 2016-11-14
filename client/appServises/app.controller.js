@@ -5,18 +5,29 @@
         .module('videoPortal')
         .controller('AppController', AppController);
 
-    AppController.$inject = ['$cookies', '$state'];
+    AppController.$inject = ['$scope', '$state', '$cookies', 'videoPortalService'];
 
-    function AppController($cookies, $state) {
+    function AppController($scope, $state, $cookies, videoPortalService) {
 
         var vm = this;
 
-        vm.activate = activate;
+        //functions
+        $scope.activate = activate;
+        $scope.logout = logout;
+        $scope.userData = {
+            sessionId : null
+        };
+
+        //variables
 
         activate();
 
         function activate(){
 
+        }
+
+        function logout(){
+            videoPortalService.destroySession();
         }
 
     }

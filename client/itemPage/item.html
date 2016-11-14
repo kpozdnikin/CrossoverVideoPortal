@@ -1,18 +1,55 @@
 <div flex layout="row">
-    <md-sidenav flex="15" md-is-locked-open="true" class="md-whiteframe-z1">
+    <div layout="column" flex>
         <md-content>
-            sidenav
+            <div class="video-panel panel">
+                <div class="panel-heading">
+                    <h2>{{ vm.video.name | filter:videoNameFilter }}</h2>
+                </div>
+                <div class="panel-body">
+                    <video controls="controls" class="panel-video">
+                        <source data-ng-if="vm.video.url" src="{{ vm.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="panel-footer">
+                    {{ vm.video.description }}
+                </div>
+                <div class="panel-controls">
+                    <jk-rating-stars max-rating="5" rating="vm.video.rating" read-only="false" on-rating="vm.onRating(video)" >
+                    </jk-rating-stars>
+                </div>
+            </div>
+        </md-content>
+    </div>
+    <md-sidenav flex="30" md-is-locked-open="true" class="md-whiteframe-z1">
+        <md-content>
+            <h3>Similar videos</h3>
+            <div class="similar-videos">
+                <div class="panel"
+                     data-ng-show="item._id != vm.video._id"
+                     data-ng-repeat="(ind, item) in vm.videos | orderBy:'-rating'" id="{{ ind }}">
+                    <div class="panel-heading">
+                        <a href="javascript:void(0)"
+                           class=""
+                           data-ui-sref="home.item({ itemId: item._id })">
+                            <h2>{{ item.name | filter:videoNameFilter }}</h2>
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <video controls="controls" class="panel-video">
+                            <source data-ng-if="item.url" src="{{ item.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="panel-footer">
+                        {{ item.description }}
+                    </div>
+                    <div class="panel-controls">
+                        <jk-rating-stars max-rating="5" rating="item.rating" read-only="false" on-rating="vm.onRating(item)" >
+                        </jk-rating-stars>
+                    </div>
+                </div>
+            </div>
         </md-content>
     </md-sidenav>
-    <div layout="column" flex>
-        <div class="box1">
-            70
-        </div>
-        <div class="box2">
-            fixed
-        </div>
-        <div class="box3">
-            flex
-        </div>
-    </div>
 </div>

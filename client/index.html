@@ -3,6 +3,8 @@
 <head>
 	<!--STYLES-->
 	<link rel="stylesheet" type="text/css" href="/bower_components/angular-material/angular-material.css"/>
+	<link rel="stylesheet" type="text/css" href="/bower_components/angular-jk-rating-stars/dist/jk-rating-stars.css"/>
+	<link rel="stylesheet" type="text/css" href="/bower_components/angular-loading-bar/build/loading-bar.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/style.css"/>
 	<!--STYLES END-->
 
@@ -15,16 +17,23 @@
 	<script type="text/javascript" src="/bower_components/angular-material/angular-material.js"></script>
 	<script type="text/javascript" src="/bower_components/angular-messages/angular-messages.js"></script>
 	<script type="text/javascript" src="/bower_components/angular-md5/angular-md5.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-jk-rating-stars/dist/jk-rating-stars.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
 	<script type="text/javascript" src="/appServises/app.module.js"></script>
 	<script type="text/javascript" src="/homePage/home.module.js"></script>
 	<script type="text/javascript" src="/itemPage/item.module.js"></script>
 	<script type="text/javascript" src="/appServises/app.controller.js"></script>
 	<script type="text/javascript" src="/homePage/home.controller.js"></script>
+	<script type="text/javascript" src="/homePage/homeAll.controller.js"></script>
 	<script type="text/javascript" src="/itemPage/item.controller.js"></script>
 	<script type="text/javascript" src="/loginPage/login.controller.js"></script>
+	<script type="text/javascript" src="/appServises/app.directive.js"></script>
 	<script type="text/javascript" src="/appServises/app.service.js"></script>
 	<script type="text/javascript" src="/appServises/config.route.js"></script>
+	<script type="text/javascript" src="/filters/app.filter.js"></script>
 	<!--SCRIPTS END-->
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<title>Crossover Video Portal</title>
 </head>
@@ -32,7 +41,11 @@
 
 <md-toolbar>
 	<div class="md-toolbar-tools">
-		<h2 class="md-flex">Private videos*** com. The best private videos you've ever seen!</h2>
+		<h2 class="md-flex"><a class="" href="/">Private videos*** com.</a> The best private videos you've ever seen!</h2>
+		<span flex></span>
+		<md-button ng-if="sessionId" ng-click="logout()" class="md-raised md-warn" aria-label="logout">
+			Logout
+		</md-button>
 	</div>
 </md-toolbar>
 

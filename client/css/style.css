@@ -1,3 +1,10 @@
+body{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+}
 .form-actions{
     margin: 0 auto;
 }
@@ -5,22 +12,59 @@
     color:red;
 }
 
-.virtualRepeatdemoDeferredLoading #vertical-container {
-    height: 292px;
+#vertical-container {
+    height: 500px;
     width: 100%;
-    max-width: 400px; }
+    max-width: 1400px;
+    overflow: scroll;
+}
 
-.virtualRepeatdemoDeferredLoading .repeated-item {
+.repeated-item {
     border-bottom: 1px solid #ddd;
     box-sizing: border-box;
-    height: 40px;
-    padding-top: 10px; }
+    padding-top: 10px;
+}
 
-.virtualRepeatdemoDeferredLoading md-content {
-    margin: 16px; }
-
-.virtualRepeatdemoDeferredLoading md-virtual-repeat-container {
-    border: solid 1px grey; }
-
-.virtualRepeatdemoDeferredLoading .md-virtual-repeat-container .md-virtual-repeat-offsetter div {
-    padding-left: 16px; }
+.panel{
+    height: 350px;
+    padding: 5px 1%;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 0;
+    -webkit-box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12);
+}
+.panel-heading{
+    max-height: 40px;
+}
+.panel-video{
+    width: 100%;
+}
+.panel-footer{
+    margin: 10px;
+    height: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.video-panel, .similar-videos{
+    overflow: scroll;
+    height: 500px;
+}
+.similar-videos .panel{
+    margin-bottom: 10px;
+    height: auto;
+}
+.video-panel .panel-footer{
+    white-space: normal;
+    word-wrap: break-word;
+}
+.col-md-3{
+    width: 21%;
+    margin: 1%;
+    float: left;
+}
+.col-md-12{
+    width: 100%;
+    float: left;
+}

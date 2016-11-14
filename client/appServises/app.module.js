@@ -7,6 +7,9 @@
         'ngCookies',
         'ngMaterial',
         'angular-md5',
+        'videoPortalScroll',
+        'angular-loading-bar',
+        'jkAngularRatingStars',
         'videoPortal.home',
         'videoPortal.item'
     ]);
