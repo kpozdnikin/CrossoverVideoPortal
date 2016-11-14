@@ -8,6 +8,7 @@
         'ngMaterial',
         'angular-md5',
         'videoPortalScroll',
+        'videoPortalPlay',
         'angular-loading-bar',
         'jkAngularRatingStars',
         'videoPortal.home',

@@ -9,8 +9,8 @@
             </a>
         </div>
         <div class="panel-body">
-            <video controls="controls" class="panel-video">
-                <source data-ng-if="item.url" src="{{ item.url }}" type="video/mp4">
+            <video play-listener controls="controls" class="panel-video">
+                <source type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' data-ng-if="item.url" src="{{ item.url }}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>

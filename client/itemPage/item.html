@@ -6,7 +6,7 @@
                     <h2>{{ vm.video.name | filter:videoNameFilter }}</h2>
                 </div>
                 <div class="panel-body">
-                    <video controls="controls" class="panel-video">
+                    <video play-listener controls="controls" class="panel-video">
                         <source data-ng-if="vm.video.url" src="{{ vm.video.url }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -36,7 +36,7 @@
                         </a>
                     </div>
                     <div class="panel-body">
-                        <video controls="controls" class="panel-video">
+                        <video play-listener controls="controls" class="panel-video">
                             <source data-ng-if="item.url" src="{{ item.url }}" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>

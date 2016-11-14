@@ -12,18 +12,25 @@
   "dependencies": {
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-css-rebase-urls": "*",
+    "gulp-debug": "*",
+    "gulp-linker": "*",
+    "gulp-minify-css": "*",
+    "gulp-rename": "*",
+    "gulp-ruby-sass": "*",
+    "gulp-uglify": "*",
+    "istanbul": "^0.4.5",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "merge-stream": "*",
     "mongoose": "^4.4.20",
     "morgan": "^1.7.0",
-    "q": "^1.4.1",
-    "gulp":"*",
-    "gulp-debug":"*",
-    "gulp-minify-css":"*",
-    "gulp-uglify":"*",
-    "gulp-concat":"*",
-    "gulp-linker":"*",
-    "gulp-ruby-sass":"*",
-    "merge-stream":"*",
-    "gulp-rename":"*",
-    "gulp-css-rebase-urls":"*"
+    "q": "^1.4.1"
+  },
+  "devDependencies": {
+    "jasmine": "^2.5.2"
   }
 }
